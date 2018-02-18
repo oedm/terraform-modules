@@ -23,3 +23,9 @@ variable "hcl_grace" {
 variable "asg_min_size" {}
 variable "asg_max_size" {}
 variable "asg_cap" {}
+
+variable "elb_healthy_threshold" {}
+variable "elb_interval" {}
+variable "elb_health_target" {}
+variable "elb_timeout" {}
+variable "elb_unhealthy_threshold" {}
