@@ -46,7 +46,6 @@ resource "aws_security_group_rule" "frontend-webserver-sgr_out_any" {
 
 data "aws_ami" "Amazon-Linux-2-LTS" {
   most_recent = true
-  executable_users = ["self"]
 
   filter {
     name = "owner-alias"
@@ -61,10 +60,6 @@ data "aws_ami" "Amazon-Linux-2-LTS" {
   filter {
     name = "name"
     values = ["amzn2-ami-hvm-*"]
-  }
-  filter {
-    name = "block-device-mapping.volume-type"
-    values = ["standard"]
   }
 }
 
