@@ -49,7 +49,7 @@ data "aws_ami" "Amazon-Linux-2-LTS" {
   executable_users = ["self"]
 
   filter {
-    name = "owners"
+    name = "ImageOwnerAlias"
     values = ["amazon"]
   }
 
