@@ -10,7 +10,7 @@
 resource "aws_security_group" "frontend-webserver_sg" {
   name        = "frontend-webserver_sg"
   description = "Allow inbound traffic to webservers"
-  vpc_id      = "$var.aws_vpc"
+  vpc_id      = "${var.aws_vpc}"
 }
 
 resource "aws_security_group_rule" "frontend-webserver_sgr_in_http" {
