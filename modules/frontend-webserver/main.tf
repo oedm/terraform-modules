@@ -95,8 +95,9 @@ data "aws_availability_zones" "all" {}
 
 resource "aws_elb" "frontend_webserver_elb" {
   name                        = "frontend-webserver-elb"
-  availability_zones          = ["${var.availability_zones_names}"]
-  security_groups             = ["${aws_security_group.frontend-webserver_sg.name}"]
+  availability_zones          = ["${data.aws_availability_zones.all.names}"]
+  security_groups             = ["${aws_security_group.frontend-webserver_sg.id}"]
+  subnets                     = ["${var.vpc_zone_identifier}"]
   cross_zone_load_balancing   = true
   idle_timeout                = 400
   connection_draining         = true

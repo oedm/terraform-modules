@@ -32,7 +32,3 @@ variable "elb_interval" {}
 variable "elb_health_target" {}
 variable "elb_timeout" {}
 variable "elb_unhealthy_threshold" {}
-
-variable "availability_zones_names" {
-  type = "list"
-}
